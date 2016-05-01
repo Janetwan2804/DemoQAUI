@@ -2,12 +2,11 @@ require 'page-object'
 require 'selenium-webdriver'
 require 'require_all'
 
-Before do|scenario|
-
+Before ('@UI') do
   @browser = Selenium::WebDriver.for :chrome
    @browser.manage.window.maximize
 end
 
-After  do
+After ('@UI')  do
   @browser.close
 end
